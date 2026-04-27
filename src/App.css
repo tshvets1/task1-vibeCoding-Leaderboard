@@ -215,22 +215,29 @@
 
 .podiumCard {
   position: relative;
-  min-height: 332px;
+  --podium-card-height: 332px;
+  --podium-base-height: 190px;
+  min-height: var(--podium-card-height);
   padding: 24px 16px 0;
   text-align: center;
   overflow: visible;
 }
 
 .podiumCard--silver {
-  margin-top: 26px;
+  --podium-card-height: 344px;
+  --podium-base-height: 200px;
+  margin-top: 18px;
 }
 
 .podiumCard--gold {
-  min-height: 366px;
+  --podium-card-height: 372px;
+  --podium-base-height: 220px;
 }
 
 .podiumCard--bronze {
-  margin-top: 26px;
+  --podium-card-height: 324px;
+  --podium-base-height: 182px;
+  margin-top: 30px;
 }
 
 .podiumCard__profile {
@@ -289,7 +296,7 @@
   z-index: 1;
   margin-top: 24px;
   width: 100%;
-  height: 190px;
+  height: var(--podium-base-height);
   border-radius: 12px 12px 0 0;
   background: linear-gradient(180deg, #edf2f8 0%, #d7e0ed 100%);
   border: 1px solid #c8d3e3;
@@ -297,7 +304,6 @@
 }
 
 .podiumCard--gold .podiumCard__base {
-  height: 220px;
   background: linear-gradient(180deg, #fff4bd 0%, #ffd94b 100%);
   border-color: #f0ca2f;
 }
@@ -835,9 +841,12 @@
     grid-template-columns: 1fr;
   }
 
-  .podiumCard--silver,
+  .podiumCard--silver {
+    margin-top: 16px;
+  }
+
   .podiumCard--bronze {
-    margin-top: 0;
+    margin-top: 28px;
   }
 
   .leaderboardRow__main {
